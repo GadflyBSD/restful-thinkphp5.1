@@ -1,6 +1,8 @@
 <?php
 namespace app\index\controller;
 
+use think\facade\Env;
+
 class Index
 {
     public function index()
@@ -11,5 +13,9 @@ class Index
     public function hello($name = 'ThinkPHP5')
     {
         return 'hello,' . $name;
+    }
+
+    public function path(){
+    	return realpath(dirname(Env::get('root_path') .'../../../')).'/Runtime/Logs/';
     }
 }
